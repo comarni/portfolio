@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio profesional de Marco, desarrollador web fullstack, proyectos destacados y experiencia profesional.">
-    <title>Marco - Portfolio Profesional</title>
+    <title>Marco Von Fürstenberg — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Barra de progreso de scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Header con navegación -->
     <header class="header">
         <div class="header-content">
-            <div class="logo">MVF</div>
+            <div class="logo">Marco<span class="logo-dot">.</span></div>
             <button class="menu-toggle" id="menuToggle" aria-label="Menú">
                 <span></span>
                 <span></span>
@@ -24,6 +30,10 @@
                 <a href="#habilidades" class="nav-link">Habilidades</a>
                 <a href="#testimonios" class="nav-link">Testimonios</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -31,15 +41,22 @@
     <main>
         <!-- Sección Hero -->
         <section id="inicio" class="hero">
+            <div class="hero-aurora"></div>
             <div class="hero-content">
-                <img src="https://media.licdn.com/dms/image/v2/D4E35AQHka_Kk0q-h3w/profile-framedphoto-shrink_400_400/B4EZuZSNRUGoAc-/0/1767803245924?e=1773842400&v=beta&t=_w_DgzAhtxAJmKmJ2eb5HyaR-Pn3nwjNP-AfZivmwm4" alt="Foto de perfil" class="profile-img">
-                <h1 class="hero-title"><span class="typewriter">Hola, soy Marco Von Fürstenberg</span></h1>
-                <p class="hero-subtitle">Desarrollador Web Full Stack</p>
+                <div class="profile-img-wrapper">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E35AQHka_Kk0q-h3w/profile-framedphoto-shrink_400_400/B4EZuZSNRUGoAc-/0/1767803245924?e=1773842400&v=beta&t=_w_DgzAhtxAJmKmJ2eb5HyaR-Pn3nwjNP-AfZivmwm4" alt="Marco Von Fürstenberg" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Marco+Von+Furstenberg&size=200&background=6366f1&color=fff&bold=true&font-size=0.4'" crossorigin="anonymous">
+                </div>
+                <p class="hero-greeting">Hola, soy</p>
+                <h1 class="hero-title"><span class="typewriter">Marco Von Fürstenberg</span></h1>
+                <p class="hero-subtitle">Desarrollador Web <span class="gradient-text">Full Stack</span></p>
                 <p class="hero-description">
                     Especializado en crear aplicaciones web modernas, responsive y de alto rendimiento. 
                     Apasionado por las nuevas tecnologías y comprometido con la excelencia en cada proyecto.
                 </p>
-                <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+                <div class="hero-cta">
+                    <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+                    <a href="#contacto" class="btn btn-outline">Contáctame</a>
+                </div>
             </div>
         </section>
 
@@ -72,7 +89,7 @@
                     
                     <!-- Proyecto 7 -->
                     <article class="project-card">
-                        <img src="https://github.com/comarni/ElRinconDeMamaInes/blob/main/img/logo.png?raw=true" alt="Web de pastelería El Rincón de Mamaines" class="project-img">
+                        <img src="https://github.com/comarni/ElRinconDeMamaInes/blob/main/img/logo.png?raw=true" alt="El Rincón de Mamaines" class="project-img" onerror="this.onerror=null;this.src='https://placehold.co/400x200/6366f1/ffffff?text=El+Rincón&font=inter'" loading="lazy">
                         <div class="project-content">
                             <h3 class="project-title">El Rincón de Mamaines</h3>
                             <p class="project-description">
@@ -92,7 +109,7 @@
 
                     <!-- Proyecto 8 -->
                     <article class="project-card">
-                        <img src="https://github.com/comarni/webhub/blob/main/img/WebHubLoho.jpeg?raw=true" alt="Web de pastelería El Rincón de Mamaines" class="project-img">
+                        <img src="https://github.com/comarni/webhub/blob/main/img/WebHubLoho.jpeg?raw=true" alt="WebHub" class="project-img" onerror="this.onerror=null;this.src='https://placehold.co/400x200/8b5cf6/ffffff?text=WebHub&font=inter'" loading="lazy">
                         <div class="project-content">
                             <h3 class="project-title">WebHub</h3>
                             <p class="project-description">
@@ -112,9 +129,9 @@
 
                     <!-- Proyecto 9 -->
                    <article class="project-card">
-                        <img src="https://github.com/comarni/webhub/blob/main/img/WebHubLoho.jpeg?raw=true" alt="Web de pastelería El Rincón de Mamaines" class="project-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQF8B3azBH_xfQ/feedshare-shrink_800/B4EZzdf7SkJUAc-/0/1773242660363?e=1775088000&v=beta&t=z5MM0_gCIziefn_uOW23jn8w9MptHnq1vrQrsB_bS0c" alt="TypeHub" class="project-img" onerror="this.onerror=null;this.src='https://placehold.co/400x200/06b6d4/ffffff?text=TypeHub&font=inter'" loading="lazy" crossorigin="anonymous">
                         <div class="project-content">
-                            <h3 class="project-title">WebHub</h3>
+                            <h3 class="project-title">TypeHub</h3>
                             <p class="project-description">
                                 Sitio web de pastelería orientado a catálogo y pedidos online, con automatización de pedidos
                                 mediante n8n y cobros integrados con Stripe.
@@ -126,7 +143,7 @@
                                 <span class="tech-tag">n8n</span>
                                 <span class="tech-tag">Stripe</span>
                             </div>
-                            <a href="https://comarni.github.io/generador-gradiente-css/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver proyecto</a>
+                            <a href="https://comarni.github.io/TypeHub/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver proyecto</a>
                         </div>
                     </article>
                     

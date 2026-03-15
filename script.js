@@ -5,6 +5,25 @@
    ============================================ */
 
 // ============================================
+// 0. Tema oscuro / claro
+// ============================================
+
+(function () {
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    }
+})();
+
+// ============================================
 // 1. Menú Responsive
 // ============================================
 
@@ -226,14 +245,9 @@ const observerOptions = {
 
 // Crear observer
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-            // Añadir clase fade-in con delay
-            entry.target.classList.add('fade-in');
-            entry.target.classList.add(`delay-${index % 3}`);
             entry.target.classList.add('animated');
-
-            // Opcionalmente, dejar de observar
             observer.unobserve(entry.target);
         }
     });
@@ -241,7 +255,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observar elementos que deben animarse
 const animateElements = document.querySelectorAll(
-    '.project-card, .skill-pill, .testimonial-card, .form-group'
+    '.project-card, .skill-pill, .testimonial-card, .skills-category'
 );
 
 animateElements.forEach(el => {
@@ -254,6 +268,14 @@ animateElements.forEach(el => {
 
 window.addEventListener('scroll', () => {
     let current = '';
+
+    // Scroll progress bar
+    const scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        scrollProgress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    }
 
     // Obtener todas las secciones
     const sections = document.querySelectorAll('section');
@@ -280,65 +302,17 @@ window.addEventListener('scroll', () => {
 // 6. Funcionalidad del Botón "Volver al Inicio"
 // ============================================
 
-// Crear botón flotante si no existe
-function createBackToTopButton() {
-    const button = document.createElement('button');
-    button.id = 'backToTop';
-    button.innerHTML = '↑';
-    button.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: none;
-        z-index: 500;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-        transition: all 0.3s ease;
-        font-weight: bold;
-    `;
-
-    document.body.appendChild(button);
-
-    // Mostrar/ocultar botón según scroll
+// Usar el botón existente en el HTML
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            button.style.display = 'flex';
-            button.style.justifyContent = 'center';
-            button.style.alignItems = 'center';
-        } else {
-            button.style.display = 'none';
-        }
-    });
+        backToTop.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+    }, { passive: true });
 
-    // Funcionalidad del botón
-    button.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Efectos hover
-    button.addEventListener('mouseenter', () => {
-        button.style.transform = 'scale(1.1)';
-        button.style.boxShadow = '0 6px 20px rgba(37, 99, 235, 0.6)';
-    });
-
-    button.addEventListener('mouseleave', () => {
-        button.style.transform = 'scale(1)';
-        button.style.boxShadow = '0 4px 12px rgba(37, 99, 235, 0.4)';
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
-
-// Crear botón cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', createBackToTopButton);
 
 // ============================================
 // 7. Prevención de Comportamientos Indeseados
