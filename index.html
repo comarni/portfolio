@@ -1,346 +1,1495 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio profesional de Marco, desarrollador web fullstack, proyectos destacados y experiencia profesional.">
-    <title>Marco Von Fürstenberg — Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>TypeHub — Test de Mecanografía Online | Mide tu WPM gratis</title>
+  <meta name="title" content="TypeHub — Test de Mecanografía Online | Mide tu WPM gratis" />
+  <meta name="description" content="Mejora tu velocidad de escritura con TypeHub. Tests de mecanografía en español, inglés y más idiomas. Mide WPM, precisión y consistencia. Gratis, sin registro." />
+  <meta name="keywords" content="mecanografía, test mecanografía, velocidad escritura, WPM, typing test, typing speed, teclado, mejorar escritura, typing practice" />
+  <meta name="author" content="TypeHub" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Spanish" />
+  <link rel="canonical" href="https://typehub.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://typehub.app/" />
+  <meta property="og:title" content="TypeHub — Test de Mecanografía Online" />
+  <meta property="og:description" content="Mejora tu velocidad de escritura. Tests en español, inglés y más. Mide WPM, precisión y consistencia. 100% gratis." />
+  <meta property="og:image" content="https://typehub.app/og-image.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="TypeHub" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://typehub.app/" />
+  <meta name="twitter:title" content="TypeHub — Test de Mecanografía Online" />
+  <meta name="twitter:description" content="Mejora tu velocidad de escritura. Tests en español, inglés y más. Mide WPM, precisión y consistencia. 100% gratis." />
+  <meta name="twitter:image" content="https://typehub.app/og-image.png" />
+
+  <!-- PWA / mobile -->
+  <meta name="theme-color" content="#323437" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TypeHub" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TypeHub",
+    "url": "https://typehub.app/",
+    "description": "Test de mecanografía online. Mejora tu velocidad WPM, precisión y consistencia con tests en múltiples idiomas.",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["es", "en", "fr", "de", "pt"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "featureList": [
+      "Tests de mecanografía en múltiples idiomas",
+      "Medición de WPM y precisión",
+      "Gráficas de progreso",
+      "Leaderboard global",
+      "Modo versus"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <!-- Barra de progreso de scroll -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+<body class="theme-serika">
+  <!-- Banner Superior -->
+  <div class="banner" id="topBanner">
+    <p>TypeHub v1.0 — Practica, compite y mejora tu WPM. <a href="#" data-section="about">Más info</a></p>
+    <button class="banner-close" id="bannerClose" aria-label="Cerrar banner">×</button>
+  </div>
 
-    <!-- Header con navegación -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">Marco<span class="logo-dot">.</span></div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav" id="mainNav">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#sobre-mi" class="nav-link">Sobre mí</a>
-                <a href="#proyectos" class="nav-link">Proyectos</a>
-                <a href="#habilidades" class="nav-link">Habilidades</a>
-                <a href="#testimonios" class="nav-link">Testimonios</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-                <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
-                    <span class="theme-icon theme-icon-dark">🌙</span>
-                    <span class="theme-icon theme-icon-light">☀️</span>
-                </button>
-            </nav>
+  <!-- Header -->
+  <header class="header">
+    <h1 class="logo">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <rect x="1" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M4 10h3M9 10h2M13 10h3M4 13h2M8 13h4M14 13h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      TypeHub
+    </h1>
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <button class="nav-btn active" data-section="test">test</button>
+      <button class="nav-btn" data-section="versus">versus</button>
+      <button class="nav-btn" data-section="languages">idiomas</button>
+      <button class="nav-btn" data-section="leagues">ligas</button>
+      <button class="nav-btn" data-section="competitive">arena</button>
+      <button class="nav-btn" data-section="leaderboard">ranking</button>
+      <button class="nav-btn" data-section="about">info</button>
+      <button class="nav-btn" data-section="settings" aria-label="Ajustes">⚙</button>
+      <!-- Auth: shown when logged out -->
+      <button class="nav-btn" data-section="login" id="navLoginBtn" aria-label="Cuenta">👤</button>
+      <!-- Auth: shown when logged in -->
+      <button class="nav-btn nav-user-pill" id="navUserPill" style="display:none;" data-section="login">
+        <span class="nav-avatar" id="navAvatarLetter">?</span>
+        <span id="navUsername">usuario</span>
+      </button>
+    </nav>
+  </header>
+
+  <aside class="arena-sidebar" id="arenaSidebar">
+    <div class="arena-sidebar-header">
+      <span class="arena-trophy">🏆</span>
+      <div>
+        <p>Arena actual</p>
+        <strong id="arenaCurrentName">Bronce</strong>
+      </div>
+      <button class="arena-toggle" id="arenaBenefitsToggle" aria-label="Mostrar ventajas de Arena">▾</button>
+    </div>
+    <div class="arena-progress-line">
+      <span id="arenaCurrentTrophies">0</span>
+      <span id="arenaNextThreshold">500</span>
+    </div>
+    <div class="versus-progress-track">
+      <div class="versus-progress-fill" id="arenaSidebarProgress"></div>
+    </div>
+    <ul class="arena-benefits-list" id="arenaBenefitsList"></ul>
+  </aside>
+
+  <button class="top100-fab" id="top100Fab" aria-label="Top 100 beneficios">Top 100</button>
+  <div class="top100-dropdown" id="top100Dropdown" style="display:none;">
+    <h4>Beneficios Elite</h4>
+    <ul>
+      <li>Matchmaking preferencial</li>
+      <li>Skins y partículas exclusivas</li>
+      <li>Acceso anticipado 24h</li>
+      <li>+15% trofeos por victoria</li>
+    </ul>
+    <div class="top100-mini-board" id="top100MiniBoard"></div>
+  </div>
+
+  <div class="comp-toast" id="competitiveToast" style="display:none;"></div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Sección: Test -->
+    <section id="test" class="section active">
+      <div class="test-container">
+        <!-- Config bar: compact pill row — always visible, expands full panel on click -->
+        <div class="config-bar" id="configBar">
+          <div class="config-bar__chips">
+            <button type="button" class="config-bar__chip config-bar__chip--active" id="cbTypeWords" data-type="words">palabras</button>
+            <button type="button" class="config-bar__chip" id="cbTypeTexts" data-type="texts">textos</button>
+            <span class="config-bar__sep">|</span>
+            <button type="button" class="config-bar__chip" id="cb15" data-dur="15">15 s</button>
+            <button type="button" class="config-bar__chip" id="cb30" data-dur="30">30 s</button>
+            <button type="button" class="config-bar__chip config-bar__chip--active" id="cb60" data-dur="60">60 s</button>
+            <button type="button" class="config-bar__chip" id="cb120" data-dur="120">120 s</button>
+            <span class="config-bar__sep">|</span>
+            <button type="button" class="config-bar__chip config-bar__chip--active" id="cb1k" data-diff="1k">1k</button>
+            <button type="button" class="config-bar__chip" id="cb5k" data-diff="5k">5k</button>
+            <button type="button" class="config-bar__chip" id="cb20k" data-diff="20k">20k</button>
+            <span class="config-bar__sep">|</span>
+            <button type="button" class="config-bar__chip" id="cbPunct" data-toggle="punct">@ punct</button>
+            <button type="button" class="config-bar__chip" id="cbNums" data-toggle="nums"># nums</button>
+          </div>
+          <button type="button" class="config-bar__more" id="configToggleBtn" aria-label="Más opciones" title="Más opciones">⋯</button>
         </div>
-    </header>
 
-    <main>
-        <!-- Sección Hero -->
-        <section id="inicio" class="hero">
-            <div class="hero-aurora"></div>
-            <div class="hero-content">
-                <div class="profile-img-wrapper">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E35AQHka_Kk0q-h3w/profile-framedphoto-shrink_400_400/B4EZuZSNRUGoAc-/0/1767803245924?e=1773842400&v=beta&t=_w_DgzAhtxAJmKmJ2eb5HyaR-Pn3nwjNP-AfZivmwm4" alt="Marco Von Fürstenberg" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Marco+Von+Furstenberg&size=200&background=6366f1&color=fff&bold=true&font-size=0.4'" crossorigin="anonymous">
-                </div>
-                <p class="hero-greeting">Hola, soy</p>
-                <h1 class="hero-title"><span class="typewriter">Marco Von Fürstenberg</span></h1>
-                <p class="hero-subtitle">Desarrollador Web <span class="gradient-text">Full Stack</span></p>
-                <p class="hero-description">
-                    Especializado en crear aplicaciones web modernas, responsive y de alto rendimiento. 
-                    Apasionado por las nuevas tecnologías y comprometido con la excelencia en cada proyecto.
-                </p>
-                <div class="hero-cta">
-                    <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-                    <a href="#contacto" class="btn btn-outline">Contáctame</a>
-                </div>
+        <!-- Panel De Modos — Rediseño visual con cards + chips (oculto por defecto) -->
+        <div class="modes-panel config-panel panel-hidden" id="modesPanel">
+
+          <!-- Fila 1: Modo + Duración -->
+          <div class="config-row">
+
+            <!-- Card: Modo de juego -->
+            <div class="config-card config-card--mode">
+              <p class="config-card__title">Modo de juego</p>
+              <div class="config-segmented" role="group" aria-label="Tipo de contenido">
+                <button class="toggle-btn config-seg-btn active" id="typeWords" data-type="words">Palabras</button>
+                <button class="toggle-btn config-seg-btn" id="typeTexts" data-type="texts">Textos</button>
+              </div>
             </div>
-        </section>
 
-        <!-- Sección Sobre mí -->
-        <section id="sobre-mi" class="about">
-            <div class="container">
-                <h2 class="section-title">Sobre mí</h2>
-                <div class="about-content">
-                    <p>
-                        Soy un desarrollador web apasionado con más de 5 años de experiencia creando soluciones digitales 
-                        innovadoras. Mi especialidad es transformar ideas en productos web funcionales, elegantes y escalables 
-                        usando las últimas tecnologías del mercado. Me encanta resolver problemas complejos y colaborar en equipos 
-                        multidisciplinarios para lograr objetivos ambiciosos.
-                    </p>
-                    <p>
-                        Mi enfoque se centra en el usuario: cada decisión de diseño y desarrollo debe mejorar la experiencia 
-                        del usuario final. Busco colaborar con empresas y startups que valoren la innovación, la calidad del 
-                        código y el impacto real de sus productos. Estoy disponible para trabajos a tiempo completo, proyectos 
-                        freelance y consultoría.
-                    </p>
-                </div>
+            <!-- Card: Duración (ocultable por JS cuando está en modo Textos sin tiempo) -->
+            <div class="config-card config-card--duration" id="timeGroup">
+              <p class="config-card__title" id="timeLabel">Duración</p>
+              <!-- Select oculto visualmente; el JS escucha su evento change -->
+              <select id="timeSelect" class="config-hidden-select" aria-hidden="true" tabindex="-1">
+                <option value="15">15s</option>
+                <option value="30">30s</option>
+                <option value="60" selected>60s</option>
+                <option value="120">120s</option>
+              </select>
+              <!-- Chips visibles -->
+              <div class="config-chips" role="radiogroup" aria-label="Duración del test">
+                <button type="button" class="config-chip" data-ctrl="timeSelect" data-val="15">15 s</button>
+                <button type="button" class="config-chip" data-ctrl="timeSelect" data-val="30">30 s</button>
+                <button type="button" class="config-chip config-chip--active" data-ctrl="timeSelect" data-val="60">60 s</button>
+                <button type="button" class="config-chip" data-ctrl="timeSelect" data-val="120">120 s</button>
+              </div>
+              <!-- Input personalizado -->
+              <div class="config-custom-wrap">
+                <input type="number" class="config-custom-input" id="timeCustomInput"
+                  placeholder="Otro…" min="5" max="600" aria-label="Duración personalizada en segundos">
+                <span class="config-custom-unit">s</span>
+              </div>
             </div>
-        </section>
 
-        <!-- Sección Proyectos -->
-        <section id="proyectos" class="projects">
-            <div class="container">
-                <h2 class="section-title">Proyectos Destacados</h2>
-                <div class="projects-grid">
-                    
-                    <!-- Proyecto 7 -->
-                    <article class="project-card">
-                        <img src="https://github.com/comarni/ElRinconDeMamaInes/blob/main/img/logo.png?raw=true" alt="El Rincón de Mamaines" class="project-img" onerror="this.onerror=null;this.src='https://placehold.co/400x200/6366f1/ffffff?text=El+Rincón&font=inter'" loading="lazy">
-                        <div class="project-content">
-                            <h3 class="project-title">El Rincón de Mamaines</h3>
-                            <p class="project-description">
-                                Sitio web de pastelería orientado a catálogo y pedidos online, con automatización de pedidos
-                                mediante n8n y cobros integrados con Stripe.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">n8n</span>
-                                <span class="tech-tag">Stripe</span>
-                            </div>
-                            <a href="https://elrincondemamaines.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver proyecto</a>
-                        </div>
-                    </article>
+          </div><!-- /.config-row -->
 
-                    <!-- Proyecto 8 -->
-                    <article class="project-card">
-                        <img src="https://github.com/comarni/webhub/blob/main/img/WebHubLoho.jpeg?raw=true" alt="WebHub" class="project-img" onerror="this.onerror=null;this.src='https://placehold.co/400x200/8b5cf6/ffffff?text=WebHub&font=inter'" loading="lazy">
-                        <div class="project-content">
-                            <h3 class="project-title">WebHub</h3>
-                            <p class="project-description">
-                                Sitio web de pastelería orientado a catálogo y pedidos online, con automatización de pedidos
-                                mediante n8n y cobros integrados con Stripe.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">n8n</span>
-                                <span class="tech-tag">Stripe</span>
-                            </div>
-                            <a href="https://comarni.github.io/webhub/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver proyecto</a>
-                        </div>
-                    </article>
+          <!-- Fila 2: Contenido + Opciones avanzadas -->
+          <div class="config-row">
 
-                    <!-- Proyecto 9 -->
-                   <article class="project-card">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQF8B3azBH_xfQ/feedshare-shrink_800/B4EZzdf7SkJUAc-/0/1773242660363?e=1775088000&v=beta&t=z5MM0_gCIziefn_uOW23jn8w9MptHnq1vrQrsB_bS0c" alt="TypeHub" class="project-img" onerror="this.onerror=null;this.src='https://placehold.co/400x200/06b6d4/ffffff?text=TypeHub&font=inter'" loading="lazy" crossorigin="anonymous">
-                        <div class="project-content">
-                            <h3 class="project-title">TypeHub</h3>
-                            <p class="project-description">
-                                Sitio web de pastelería orientado a catálogo y pedidos online, con automatización de pedidos
-                                mediante n8n y cobros integrados con Stripe.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">n8n</span>
-                                <span class="tech-tag">Stripe</span>
-                            </div>
-                            <a href="https://comarni.github.io/TypeHub/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver proyecto</a>
-                        </div>
-                    </article>
-                    
+            <!-- Card: Contenido -->
+            <div class="config-card config-card--content">
+              <p class="config-card__title">Contenido</p>
+
+              <!-- Idioma -->
+              <div class="config-field">
+                <span class="config-label">Idioma</span>
+                <select id="testLanguage" class="config-select">
+                  <option value="es">🇪🇸 Español</option>
+                  <option value="en">🇺🇸 English</option>
+                  <option value="fr">🇫🇷 Français</option>
+                  <option value="de">🇩🇪 Deutsch</option>
+                  <option value="pt">🇧🇷 Português</option>
+                </select>
+              </div>
+
+              <!-- Banco de palabras (oculto en modo Textos por JS) -->
+              <div class="config-field" id="diffGroup">
+                <span class="config-label">Banco de palabras</span>
+                <select id="difficultySelect" class="config-hidden-select" aria-hidden="true" tabindex="-1">
+                  <option value="1k">1k palabras</option>
+                  <option value="5k">5k palabras</option>
+                  <option value="20k">20k palabras</option>
+                </select>
+                <div class="config-chips" role="radiogroup" aria-label="Banco de palabras">
+                  <button type="button" class="config-chip config-chip--active" data-ctrl="difficultySelect" data-val="1k">🗒 1 k</button>
+                  <button type="button" class="config-chip" data-ctrl="difficultySelect" data-val="5k">📚 5 k</button>
+                  <button type="button" class="config-chip" data-ctrl="difficultySelect" data-val="20k">🧠 20 k</button>
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <!-- Sección Habilidades -->
-        <section id="habilidades" class="skills">
-            <div class="container">
-                <h2 class="section-title">Habilidades</h2>
-                <div class="skills-grid">
-                    <!-- Categoría 1 -->
-                    <div class="skills-category">
-                        <h3 class="skills-category-title">Lenguajes y Tecnologías</h3>
-                        <div class="skills-list">
-                            <span class="skill-pill">HTML5</span>
-                            <span class="skill-pill">CSS3</span>
-                            <span class="skill-pill">JavaScript</span>
-                            <span class="skill-pill">TypeScript</span>
-                            <span class="skill-pill">React</span>
-                            <span class="skill-pill">Vue.js</span>
-                            <span class="skill-pill">Angular</span>
-                            <span class="skill-pill">Node.js</span>
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">SQL</span>
-                            <span class="skill-pill">MongoDB</span>
-                            <span class="skill-pill">GraphQL</span>
-                        </div>
-                    </div>
-
-                    <!-- Categoría 2 -->
-                    <div class="skills-category">
-                        <h3 class="skills-category-title">Herramientas y Plataformas</h3>
-                        <div class="skills-list">
-                            <span class="skill-pill">Git / GitHub</span>
-                            <span class="skill-pill">Docker</span>
-                            <span class="skill-pill">AWS</span>
-                            <span class="skill-pill">Firebase</span>
-                            <span class="skill-pill">Figma</span>
-                            <span class="skill-pill">VS Code</span>
-                            <span class="skill-pill">Webpack</span>
-                            <span class="skill-pill">CI/CD</span>
-                            <span class="skill-pill">Linux</span>
-                            <span class="skill-pill">Postman</span>
-                            <span class="skill-pill">Jira</span>
-                            <span class="skill-pill">Stripe</span>
-                        </div>
-                    </div>
-
-                    <!-- Categoría 3 -->
-                    <div class="skills-category">
-                        <h3 class="skills-category-title">Soft Skills</h3>
-                        <div class="skills-list">
-                            <span class="skill-pill">Liderazgo</span>
-                            <span class="skill-pill">Comunicación</span>
-                            <span class="skill-pill">Trabajo en Equipo</span>
-                            <span class="skill-pill">Problem Solving</span>
-                            <span class="skill-pill">Pensamiento Crítico</span>
-                            <span class="skill-pill">Adaptabilidad</span>
-                            <span class="skill-pill">Mentalidad Ágil</span>
-                            <span class="skill-pill">Mentoría</span>
-                            <span class="skill-pill">Presentación</span>
-                            <span class="skill-pill">Gestión del Tiempo</span>
-                            <span class="skill-pill">Atención al Detalle</span>
-                            <span class="skill-pill">Creatividad</span>
-                        </div>
-                    </div>
+              <!-- Categorías de texto (visible solo en modo Textos, JS controla display) -->
+              <div class="config-field" id="textCategoryGroup" style="display:none;">
+                <span class="config-label">Categoría de texto</span>
+                <div class="category-chips" id="textCategoryChips" role="radiogroup" aria-label="Seleccionar categoría de texto">
+                  <button type="button" class="category-chip active" data-category="literature" role="radio" aria-checked="true">📖 Literatura</button>
+                  <button type="button" class="category-chip" data-category="science" role="radio" aria-checked="false">🔬 Ciencia</button>
+                  <button type="button" class="category-chip" data-category="philosophy" role="radio" aria-checked="false">💭 Filosofía</button>
+                  <button type="button" class="category-chip" data-category="tech" role="radio" aria-checked="false">💻 Tecnología</button>
+                  <button type="button" class="category-chip" data-category="quotes" role="radio" aria-checked="false">💬 Citas</button>
                 </div>
+              </div>
+
+            </div><!-- /.config-card--content -->
+
+            <!-- Card: Opciones avanzadas — accordion (JS controla display del contenedor completo) -->
+            <div class="config-card config-card--advanced" id="wordOptions">
+              <button type="button" class="config-accordion-btn" aria-expanded="false" aria-controls="advancedBody">
+                <span class="config-accordion-label">⚙️ Opciones avanzadas</span>
+                <span class="config-accordion-arrow" aria-hidden="true">›</span>
+              </button>
+              <div class="config-accordion-body" id="advancedBody" hidden>
+                <label class="config-switch">
+                  <input type="checkbox" id="optUppercase" class="config-switch__input">
+                  <span class="config-switch__track"></span>
+                  <div class="config-switch__text">
+                    <span class="config-switch__label">Mayúsculas</span>
+                    <span class="config-switch__desc">Incluye letras en mayúscula</span>
+                  </div>
+                </label>
+                <label class="config-switch">
+                  <input type="checkbox" id="optPunctuation" class="config-switch__input">
+                  <span class="config-switch__track"></span>
+                  <div class="config-switch__text">
+                    <span class="config-switch__label">Puntuación</span>
+                    <span class="config-switch__desc">Añade comas, puntos y signos</span>
+                  </div>
+                </label>
+                <label class="config-switch">
+                  <input type="checkbox" id="optNumbers" class="config-switch__input">
+                  <span class="config-switch__track"></span>
+                  <div class="config-switch__text">
+                    <span class="config-switch__label">Números</span>
+                    <span class="config-switch__desc">Mezcla dígitos en el texto</span>
+                  </div>
+                </label>
+              </div><!-- /#advancedBody -->
+            </div><!-- /.config-card--advanced -->
+
+          </div><!-- /.config-row -->
+
+          <!-- Barra de resumen + CTA -->
+          <div class="config-summary">
+            <span class="config-summary__text" id="configSummaryText">Palabras · 60 s · Banco 1 k</span>
+            <div class="config-summary__actions">
+              <button type="button" class="btn config-reset-btn" id="configResetBtn">↺ Resetear</button>
+              <button type="button" class="btn btn-primary config-cta" id="configStartBtn">▶ Empezar test</button>
             </div>
-        </section>
+          </div>
 
-        <!-- Sección Testimonios -->
-        <section id="testimonios" class="testimonials">
-            <div class="container">
-                <h2 class="section-title">Testimonios</h2>
-                <div class="testimonials-grid">
-                    <!-- Testimonio 1 -->
-                    <article class="testimonial-card">
-                        <p class="testimonial-text">
-                            "Marco desarrolló una aplicación web completamente personalizada para nuestro negocio. 
-                            Su compromiso con la calidad y su capacidad de entender nuestras necesidades fueron excepcionales. 
-                            Lo recomiendo totalmente."
-                        </p>
-                        <div class="testimonial-author">
-                            <strong>Carlos Mendez</strong>
-                            <span class="testimonial-role">CEO at TechStart Co.</span>
-                        </div>
-                    </article>
+        </div><!-- /.modes-panel.config-panel -->
 
-                    <!-- Testimonio 2 -->
-                    <article class="testimonial-card">
-                        <p class="testimonial-text">
-                            "Un profesional responsable, creativo y con excelente atención al detalle. 
-                            Marco nos ayudó a modernizar nuestra plataforma y el resultado superó nuestras expectativas."
-                        </p>
-                        <div class="testimonial-author">
-                            <strong>Laura García</strong>
-                            <span class="testimonial-role">Product Manager at Digital Solutions</span>
-                        </div>
-                    </article>
-
-                    <!-- Testimonio 3 -->
-                    <article class="testimonial-card">
-                        <p class="testimonial-text">
-                            "Trabajar con Marco fue una excelente experiencia. Entrega a tiempo, código limpio y 
-                            siempre disponible para realizar ajustes. Definitivamente volvería a contrarlo."
-                        </p>
-                        <div class="testimonial-author">
-                            <strong>Juan Pérez</strong>
-                            <span class="testimonial-role">Founder at Innovation Lab</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Contacto -->
-        <section id="contacto" class="contact">
-            <div class="container">
-                <h2 class="section-title">Contacto</h2>
-                <p class="contact-intro">
-                    ¿Tienes un proyecto en mente o necesitas ayuda? Me encantaría escucharte. 
-                    Completa el formulario o envíame un correo directamente.
-                </p>
-                
-                <div class="contact-wrapper">
-                    <!-- Formulario -->
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                            <span class="error-message" id="nombreError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="emailError"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-                            <span class="error-message" id="mensajeError"></span>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                        <div id="formMessage" class="form-message"></div>
-                    </form>
-
-                    <!-- Enlaces de contacto -->
-                    <div class="contact-info">
-                        <h3>Redes Sociales</h3>
-                        <div class="social-links">
-                            <a href="mailto:marcovonarana10@gmail.com" class="social-link" title="Email">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                </svg>
-                                Email
-                            </a>
-                            <a href="https://www.linkedin.com/in/marco-von-f%C3%BCrstenberg-86b6a1234/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-                                </svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://github.com/comarni?tab=repositories" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                GitHub
-                            </a>
-                            <a href="https://github.com/comarni?tab=repositories" target="_blank" rel="noopener noreferrer" class="social-link" title="Repositorio GitHub">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-                                </svg>
-                                Repositorio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Marco Devlopoli. Todos los derechos reservados.</p>
-            <p>Diseñado y desarrollado con <span class="heart">❤</span> por Marco</p>
+        <!-- Stats en vivo — ocultas en reposo, visibles durante el test -->
+        <div class="test-stats stats-hidden" id="testStats">
+          <div class="stat">
+            <span class="stat-label">wpm</span>
+            <span class="stat-value" id="wpmValue">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">acc</span>
+            <span class="stat-value" id="accValue">100%</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">tiempo</span>
+            <span class="stat-value" id="timerValue">60s</span>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- Área de Texto — 3-line cinematic player -->
+        <div class="test-area" id="testArea">
+          <!-- Viewport: only 3 lines visible -->
+          <div class="text-viewport" id="textViewport">
+            <!-- The sliding track — JS populates .text-line elements here -->
+            <div class="text-track" id="textTrack"></div>
+          </div>
+          <!-- Idle hint (hidden once test starts) -->
+          <div class="test-hint" id="testHint" aria-hidden="true">comienza a escribir…</div>
+          <!-- Caret -->
+          <span id="typingCaret" class="typing-caret caret-beam" aria-hidden="true"></span>
+          <!-- Hidden input -->
+          <input
+            type="text"
+            id="testInput"
+            class="test-input"
+            inputmode="text"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+            aria-label="Campo de entrada del test de mecanografía"
+          />
+        </div>
+
+        <!-- Atajos de Teclado -->
+        <div class="shortcuts">
+          <p class="footer-key"><kbd>Tab</kbd><span class="footer-key-sep">+</span><kbd>Enter</kbd> reiniciar</p>
+          <p class="footer-key"><kbd>Esc</kbd> parar</p>
+          <button class="restart-btn-mini" id="restartBtn">↺ reiniciar</button>
+        </div>
+
+        <!-- Modal Overlay Resultados (no se usa para resultados inline, sólo para otros modales) -->
+        <div class="modal-overlay" id="modalOverlay" style="display: none;"></div>
+
+        <!-- Resultados inline — aparece en el mismo espacio que el test area -->
+        <div class="results-panel" id="results" style="display: none;">
+          <div id="newRecordBadge" class="new-record-badge" style="display:none;">🏆 Nuevo Récord Personal</div>
+          <h2>resultados</h2>
+
+          <!-- Stats Grid - Formato Monkeytype -->
+          <div class="results-stats-grid">
+            <!-- WPM -->
+            <div class="result-stat-block">
+              <div class="stat-header">wpm</div>
+              <div class="stat-big" id="resultWpmBig">0</div>
+              <div class="stat-small" id="resultWpmSmall">0.00 wpm</div>
+            </div>
+
+            <!-- ACC (Precisión) -->
+            <div class="result-stat-block">
+              <div class="stat-header">acc</div>
+              <div class="stat-big" id="resultAccBig">0%</div>
+              <div class="stat-small" id="resultAccSmall">0.00% 0 correct 0 incorrect</div>
+            </div>
+
+            <!-- Raw WPM -->
+            <div class="result-stat-block">
+              <div class="stat-header">raw wpm</div>
+              <div class="stat-big" id="resultRawWpmBig">0</div>
+              <div class="stat-small" id="resultRawWpmSmall">0.00 wpm</div>
+            </div>
+
+            <!-- Caracteres -->
+            <div class="result-stat-block">
+              <div class="stat-header">characters</div>
+              <div class="stat-small" id="resultCharsBreakdown">0/0/0/0</div>
+              <div class="stat-tiny">correct incorrect extra missed</div>
+            </div>
+
+            <!-- Consistencia -->
+            <div class="result-stat-block">
+              <div class="stat-header">consistency</div>
+              <div class="stat-big" id="resultConsistencyBig">0%</div>
+              <div class="stat-small" id="resultConsistencySmall">0.00%</div>
+            </div>
+
+            <!-- Tiempo -->
+            <div class="result-stat-block">
+              <div class="stat-header">time</div>
+              <div class="stat-big" id="resultTimeBig">0s</div>
+              <div class="stat-small" id="resultTimeSmall">00:00:00</div>
+              <div class="stat-tiny" id="resultTimeExtra">0s afk 0%</div>
+            </div>
+
+            <!-- Test Type -->
+            <div class="result-stat-block">
+              <div class="stat-header">test type</div>
+              <div class="stat-small" id="resultTestType">words</div>
+              <div class="stat-tiny" id="resultTestLanguage">spanish</div>
+            </div>
+          </div>
+
+          <!-- Gráfica de WPM en el tiempo -->
+          <div class="chart-container">
+            <h3>WPM a lo largo del test</h3>
+            <div class="chart-controls">
+              <button class="chart-mode-btn active" data-mode="scale">📈 Escala</button>
+              <button class="chart-mode-btn" data-mode="raw">Raw</button>
+              <button class="chart-mode-btn" data-mode="errors">Errores</button>
+            </div>
+            <canvas id="wpmChart" width="800" height="260"></canvas>
+          </div>
+
+          <!-- Gráfica de Progreso Temporal (solo para usuarios logueados) -->
+          <div class="chart-container" id="progressChartContainer" style="display: none;">
+            <h3>Tu Progreso</h3>
+            <div class="progress-tabs">
+              <button class="progress-tab active" data-period="7days">Últimos 7 días</button>
+              <button class="progress-tab" data-period="30days">Últimos 30 días</button>
+              <button class="progress-tab" data-period="12months">Últimos 12 meses</button>
+              <button class="progress-tab" data-period="alltime">Todo el tiempo</button>
+            </div>
+            <canvas id="progressChart" width="800" height="260"></canvas>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="results-actions">
+            <button class="btn btn-secondary results-restart-btn" id="nextTestBtn" title="Tab + Enter">↺ nuevo test</button>
+            <button class="btn btn-secondary results-restart-btn" id="repeatTestBtn">↺ repetir</button>
+            <button class="btn btn-secondary results-restart-btn" id="retryBtn">↺ reintentar</button>
+          </div>
+
+          <!-- Nota de Sesión -->
+          <p class="results-note" id="resultsNote" style="display: none;">📌 Inicia sesión para guardar tu resultado</p>
+        </div>
+
+        <!-- Modal de Términos de Servicio -->
+        <div class="terms-modal-overlay" id="termsModalOverlay" style="display: none;"></div>
+        <div class="terms-modal" id="termsModal" style="display: none;">
+          <button class="modal-close" id="closeTermsBtn" aria-label="Cerrar términos">×</button>
+          <div class="terms-content">
+            <h2>Términos de Servicio</h2>
+            <p><strong>Última actualización: 11 de marzo de 2026</strong></p>
+
+            <h3>1. Aceptación de Términos</h3>
+            <p>Al acceder y utilizar TypeHub ("la Plataforma"), aceptas estar vinculado por estos Términos de Servicio. Si no aceptas todos los términos y condiciones, <strong>no estás autorizado para usar nuestros servicios</strong>.</p>
+
+            <h3>2. Descripción del Servicio</h3>
+            <p>TypeHub ofrece:</p>
+            <ul>
+              <li>Pruebas de tipografía en múltiples idiomas y dificultades</li>
+              <li>Seguimiento de estadísticas (velocidad WPM, precisión ACC)</li>
+              <li>Sistema de cuentas personalizadas</li>
+              <li>Gráficas de progreso en períodos de 7 días, 30 días, 12 meses y todo el tiempo</li>
+            </ul>
+
+            <h3>3. Cuentas de Usuario y Responsabilidad</h3>
+            <p><strong>Tu Responsabilidad:</strong></p>
+            <ul>
+              <li>Eres responsable de mantener la confidencialidad de tu contraseña</li>
+              <li>Debes ser honesto al proporcionar información de registro</li>
+              <li>No debes usar TypeHub para propósitos ilegales</li>
+            </ul>
+
+            <h3>4. Prohibiciones Explícitas</h3>
+            <p>Mientras usas TypeHub, NO debes:</p>
+            <ul>
+              <li>Intentar obtener acceso no autorizado a servidores</li>
+              <li>Usar bots, scripts o herramientas automatizadas para generar resultados fraudulentos</li>
+              <li>Compartir tu cuenta con otros usuarios</li>
+              <li>Crear múltiples cuentas para manipular estadísticas</li>
+              <li>Enviar contenido ilegal, ofensivo o discriminatorio</li>
+              <li>Acosar, amenazar o intimidar a otros usuarios</li>
+              <li>Violar cualquier ley aplicable</li>
+            </ul>
+
+            <h3>5. Almacenamiento de Datos y Privacidad</h3>
+            <p><strong>Datos Almacenados Actualmente:</strong></p>
+            <p>TypeHub almacena datos localmente en tu navegador (localStorage):</p>
+            <ul>
+              <li>Información de cuenta: Nombre de usuario, correo electrónico, contraseña</li>
+              <li>Historial de pruebas: WPM, ACC, caracteres tipados, tiempo, fecha, tipo de prueba</li>
+            </ul>
+            <p><em>Nota: Estos datos permanecen ÚNICAMENTE en tu dispositivo y no se sincronizan con servidores externos por defecto.</em></p>
+
+            <h3>6. Integración Futura con N8N y Hostinger</h3>
+            <p>En futuras versiones, TypeHub podría ofrecer sincronización de datos con servidores en Hostinger a través de procesos automatizados con N8N:</p>
+            <ul>
+              <li>Los datos serán transmitidos de forma segura (HTTPS)</li>
+              <li>Se aplicarán estándares de seguridad y encriptación</li>
+              <li>Antes de implementar esta sincronización, solicitaremos tu consentimiento explícito</li>
+            </ul>
+
+            <h3>7. Divulgación de Datos</h3>
+            <ul>
+              <li>Para mejorar tu experiencia en TypeHub</li>
+              <li>Para mostrar tus estadísticas personalizadas y gráficas de progreso</li>
+              <li>Nunca vendemos ni compartimos tus datos con terceros sin consentimiento</li>
+            </ul>
+
+            <h3>8. Derecho a Eliminar Datos</h3>
+            <p>Puedes eliminar tu cuenta y todos tus datos en cualquier momento desde la opción "Limpiar datos locales" en los ajustes de la plataforma.</p>
+
+            <h3>9. Atribución</h3>
+            <p>TypeHub está inspirado en <a href="https://monkeytype.com/" target="_blank">Monkeytype</a>, que es de código abierto bajo licencia AGPL-3.0. Los textos de prueba provienen de fuentes de dominio público.</p>
+
+            <h3>10. Limitación de Responsabilidad</h3>
+            <p>TypeHub se proporciona "TAL CUAL" sin garantías explícitas ni implícitas. No somos responsables por:</p>
+            <ul>
+              <li>Pérdida de datos por limpieza del navegador</li>
+              <li>Baja de la plataforma o mantenimiento</li>
+              <li>Errores en el cálculo de WPM o ACC</li>
+              <li>Daños indirectos causados por el uso de TypeHub</li>
+            </ul>
+
+            <h3>11. Cambios en los Términos</h3>
+            <p>TypeHub puede modificar estos términos en cualquier momento sin previo aviso. El uso continuado implica aceptación de los nuevos términos.</p>
+
+            <h3>12. Contacto</h3>
+            <p>Si tienes preguntas sobre estos Términos de Servicio, por favor contacta a través de nuestro formulario de contacto o envía un email a <strong>[Tu correo de contacto]</strong>.</p>
+
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light); border-top: 1px solid var(--accent-secondary); padding-top: 1rem;">
+              Al usar TypeHub, aceptas completamente estos Términos de Servicio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Versus -->
+    <section id="versus" class="section">
+      <div class="versus-container">
+        <div class="versus-config-panel">
+          <h2>⚔️ Versus 1v1</h2>
+          <p class="versus-subtitle">Duelo local contra bot con simulación en tiempo real.</p>
+          <div class="versus-config-grid">
+            <div class="mode-group">
+              <label for="versusModeType">Modo:</label>
+              <select id="versusModeType">
+                <option value="time" selected>Tiempo</option>
+                <option value="words">Palabras</option>
+              </select>
+            </div>
+
+            <div class="mode-group" id="versusTimeGroup">
+              <label for="versusTimeSelect">Duración:</label>
+              <select id="versusTimeSelect">
+                <option value="15">15s</option>
+                <option value="30">30s</option>
+                <option value="60" selected>60s</option>
+                <option value="120">120s</option>
+              </select>
+            </div>
+
+            <div class="mode-group" id="versusWordsGroup" style="display:none;">
+              <label for="versusWordsSelect">Palabras:</label>
+              <select id="versusWordsSelect">
+                <option value="25">25</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+
+            <div class="mode-group">
+              <label for="versusLanguage">Idioma:</label>
+              <select id="versusLanguage">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="pt">Português</option>
+              </select>
+            </div>
+
+            <div class="mode-group">
+              <label for="versusDifficulty">Dificultad:</label>
+              <select id="versusDifficulty">
+                <option value="1k">1k palabras</option>
+                <option value="5k">5k palabras</option>
+                <option value="20k">20k palabras</option>
+              </select>
+            </div>
+
+            <div class="mode-group">
+              <label for="versusBotDifficulty">Dificultad del bot:</label>
+              <select id="versusBotDifficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+                <option value="chaos">Chaos</option>
+              </select>
+            </div>
+          </div>
+          <div class="versus-config-actions">
+            <button class="btn btn-primary" id="versusStartBtn">Jugar contra bot</button>
+            <p class="versus-shortcut-hint"><kbd>Tab</kbd> + <kbd>Enter</kbd> o <kbd>Tab</kbd> + <kbd>Espacio</kbd> para reiniciar duelo</p>
+            <p id="versusLoginHint" class="results-note" style="display:none; margin-top:0.75rem;">Inicia sesión para guardar tu historial de duelos</p>
+          </div>
+        </div>
+
+        <div class="versus-arena" id="versusArena">
+          <div class="versus-column">
+            <div class="versus-player-card">
+              <div class="versus-card-header">
+                <div>
+                  <h3>Tú</h3>
+                  <p class="versus-player-name" id="versusUserName">Invitado</p>
+                  <span class="versus-elite-badge" id="versusEliteBadge" style="display:none;">Elite</span>
+                </div>
+                <span class="versus-rank-pill" id="versusUserRank">Bronce</span>
+              </div>
+
+              <div class="versus-live-stats">
+                <div class="versus-live-big" id="versusUserWpm">0</div>
+                <div class="versus-live-meta">
+                  <span id="versusUserAcc">ACC 100%</span>
+                  <span id="versusUserConsistency">Consistencia: 100%</span>
+                </div>
+                <div class="versus-progress-track">
+                  <div class="versus-progress-fill" id="versusUserProgress"></div>
+                </div>
+              </div>
+
+              <div class="test-area versus-test-area" id="versusUserArea">
+                <div class="text-display" id="versusUserText">Configura y pulsa "Jugar contra bot" para empezar.</div>
+                <span id="versusUserCaret" class="typing-caret" aria-hidden="true"></span>
+                <input
+                  type="text"
+                  id="versusInput"
+                  class="test-input"
+                  placeholder="Escribe aquí..."
+                  aria-label="Campo de entrada versus"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="versus-column">
+            <div class="versus-player-card">
+              <div class="versus-card-header">
+                <div>
+                  <h3>Bot</h3>
+                  <p class="versus-player-name" id="versusBotName">TypeBot</p>
+                </div>
+                <span class="versus-rank-pill" id="versusBotRank">Plata</span>
+              </div>
+
+              <div class="versus-live-stats">
+                <div class="versus-live-big" id="versusBotWpm">0</div>
+                <div class="versus-live-meta">
+                  <span id="versusBotAcc">ACC 100%</span>
+                  <span id="versusBotConsistency">Consistencia: 100%</span>
+                </div>
+                <div class="versus-progress-track">
+                  <div class="versus-progress-fill" id="versusBotProgress"></div>
+                </div>
+              </div>
+
+              <div class="test-area versus-test-area versus-bot-area" id="versusBotArea">
+                <div class="text-display" id="versusBotText">El bot estará listo cuando inicies el duelo.</div>
+              </div>
+
+              <div class="versus-bot-mood">
+                <span>Estado:</span>
+                <strong id="versusBotMood">calentando</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="versus-global-bar">
+          <div class="versus-global-item"><span>Cuenta atrás</span><strong id="versusCountdown">-</strong></div>
+          <div class="versus-global-item"><span>Estado</span><strong id="versusMatchStatus">En espera</strong></div>
+          <div class="versus-global-item"><span>Objetivo</span><strong id="versusObjective">Tiempo 60s</strong></div>
+          <div class="versus-global-item"><span>Ping</span><strong id="versusPing">Ping 42ms</strong></div>
+        </div>
+
+        <div class="content-container versus-placeholder-board">
+          <h3>Clasificación global online (próximamente)</h3>
+          <p>Datos simulados mientras se integra el backend competitivo real:</p>
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Jugador</th>
+                <th>Racha</th>
+                <th>ELO</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+          <tbody id="versusPlaceholderBody">
+              <tr><td colspan="5" style="text-align:center; color: var(--text-light);">Clasificación online disponible próximamente</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="versus-countdown-overlay" id="versusCountdownOverlay" style="display:none;">
+          <div class="versus-countdown-number" id="versusCountdownNumber">3</div>
+        </div>
+
+        <div class="modal-overlay" id="versusModalOverlay" style="display:none;"></div>
+        <div class="results-modal versus-results-modal" id="versusResultsModal" style="display:none;">
+          <button class="modal-close" id="closeVersusResultsBtn" aria-label="Cerrar resultados del duelo">×</button>
+          <h2>Resultados del duelo</h2>
+          <div class="versus-result-banner" id="versusResultTitle">Empate</div>
+          <p class="versus-result-flavor" id="versusResultFlavor">Duelo muy parejo. Una revancha puede definir al ganador.</p>
+
+          <div class="versus-results-grid">
+            <div class="result-stat-block">
+              <div class="stat-header">Tu WPM</div>
+              <div class="stat-big" id="versusResultUserWpm">0</div>
+              <div class="stat-small" id="versusResultUserAcc">ACC 100%</div>
+            </div>
+            <div class="result-stat-block">
+              <div class="stat-header">Bot WPM</div>
+              <div class="stat-big" id="versusResultBotWpm">0</div>
+              <div class="stat-small" id="versusResultBotAcc">ACC 100%</div>
+            </div>
+            <div class="result-stat-block">
+              <div class="stat-header">Diferencia</div>
+              <div class="stat-big" id="versusResultDiff">+0 WPM</div>
+              <div class="stat-small" id="versusResultMeta">Sin ventaja clara</div>
+            </div>
+          </div>
+
+          <div class="chart-container">
+            <h3>Evolución de WPM (tú vs bot)</h3>
+            <canvas id="versusWpmChart" width="800" height="220"></canvas>
+          </div>
+
+          <div class="results-actions">
+            <button class="btn btn-primary" id="versusRematchBtn">Revancha</button>
+            <button class="btn btn-secondary" id="versusNewMatchBtn">Nuevo duelo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Aprender Idiomas -->
+    <section id="languages" class="section">
+      <div class="languages-container">
+        <div class="content-container languages-header-card">
+          <h2>Aprender Idiomas (beta)</h2>
+          <p>Practica mecanografía mientras aprendes frases básicas en Español, Inglés y Francés. Esta es una versión demo, tu feedback es clave.</p>
+        </div>
+
+        <div class="languages-top-grid">
+          <div class="content-container languages-config-card">
+            <h3>Tu Ruta</h3>
+            <div class="languages-select-row">
+              <div class="mode-group">
+                <label for="langBaseSelect">Idioma base</label>
+                <select id="langBaseSelect">
+                  <option value="es">Español</option>
+                  <option value="en">Inglés</option>
+                  <option value="fr">Francés</option>
+                </select>
+              </div>
+              <div class="mode-group">
+                <label for="langTargetSelect">Idioma objetivo</label>
+                <select id="langTargetSelect">
+                  <option value="en">Inglés</option>
+                  <option value="fr">Francés</option>
+                  <option value="es">Español</option>
+                </select>
+              </div>
+            </div>
+            <p class="languages-active-path" id="languagesActivePath">Estás aprendiendo Inglés desde Español.</p>
+            <p class="languages-motivation" id="languagesMotivation">Hoy has hecho progreso real. Sigue así.</p>
+          </div>
+
+          <div class="content-container languages-profile-card">
+            <h3>Perfil de Idioma</h3>
+            <div class="languages-profile-grid">
+              <div class="languages-profile-item"><span>Objetivo</span><strong id="langProfileTarget">Inglés</strong></div>
+              <div class="languages-profile-item"><span>Nivel</span><strong>Básico</strong></div>
+              <div class="languages-profile-item"><span>⭐ XP</span><strong id="langProfileXp">0 XP</strong></div>
+              <div class="languages-profile-item"><span>❤️ Corazones</span><strong id="langProfileHearts">3/3</strong></div>
+              <div class="languages-profile-item"><span>💎 Gemas</span><strong id="langProfileGems">0</strong></div>
+            </div>
+            <div class="versus-progress-track"><div class="versus-progress-fill" id="langProfileXpProgress"></div></div>
+            <p class="languages-sub-note">En el futuro podrás usar gemas para desbloquear contenido avanzado o saltar lecciones.</p>
+          </div>
+        </div>
+
+        <div class="content-container languages-path-card">
+          <h3>Camino de aprendizaje</h3>
+          <div class="languages-path" id="languagesPath"></div>
+        </div>
+
+        <div class="content-container languages-lesson-card" id="languageLessonPanel" style="display:none;">
+          <div class="languages-lesson-head">
+            <div>
+              <h3 id="languageLessonTitle">Lección</h3>
+              <p id="languageLessonDescription">Descripción breve de la lección.</p>
+            </div>
+            <button class="btn btn-secondary" id="languageCloseLessonBtn">Cerrar</button>
+          </div>
+
+          <div class="languages-lesson-stats">
+            <div class="stat"><span class="stat-label">Progreso</span><span class="stat-value" id="languageLessonProgressLabel">1/5</span></div>
+            <div class="stat"><span class="stat-label">ACC</span><span class="stat-value" id="languageLessonAcc">100%</span></div>
+            <div class="stat"><span class="stat-label">WPM</span><span class="stat-value" id="languageLessonWpm">0</span></div>
+          </div>
+
+          <div class="versus-progress-track"><div class="versus-progress-fill" id="languageLessonProgressBar"></div></div>
+
+          <div class="languages-prompt-wrap">
+            <p class="languages-prompt-base">Frase en idioma base:</p>
+            <div class="languages-prompt-text" id="languagePromptBase">Hola, ¿cómo estás?</div>
+            <p class="languages-prompt-hint" id="languagePromptHint">Escribe la traducción en inglés.</p>
+          </div>
+
+          <div class="test-area languages-typing-area">
+            <div class="text-display" id="languageTargetDisplay">your translation here</div>
+            <input type="text" id="languageTypingInput" class="languages-typing-input" placeholder="Escribe aquí y pulsa Enter" />
+          </div>
+
+          <div class="languages-lesson-actions">
+            <button class="btn btn-primary" id="languageCheckBtn">Comprobar frase</button>
+            <p id="languageLessonFeedback" class="languages-feedback">Buen trabajo, vamos a por la siguiente.</p>
+          </div>
+        </div>
+
+        <div class="content-container languages-donation-card">
+          <h3>Apoya TypeHub Languages</h3>
+          <p>TypeHub Languages está en beta. Si te gusta y quieres que sigamos construyendo más lecciones, puedes apoyar el proyecto.</p>
+          <a class="btn btn-primary" id="languageDonateBtn" href="#">Apoyar con una donación</a>
+          <p class="languages-donate-note">Cambia el enlace de donación en el atributo href de este botón cuando tengas tu URL final (Ko-fi/Stripe).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Ligas -->
+    <section id="leagues" class="section">
+      <div class="content-container">
+        <h2>📈 Ligas Semanales</h2>
+        <p>Reinicio todos los lunes. 10 divisiones por liga (I-X), ascenso/descenso automático y Hall of Fame para top 100.</p>
+        <table class="leaderboard-table league-table">
+          <thead>
+            <tr>
+              <th>Posición</th>
+              <th>Jugador</th>
+              <th>Liga</th>
+              <th>Trofeos</th>
+              <th>Mejor WPM</th>
+            </tr>
+          </thead>
+          <tbody id="leaguesTableBody">
+            <tr><td colspan="5" style="text-align:center;color:var(--text-sub);padding:1rem;">Cargando clasificación…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sección: Competitivo -->
+    <section id="competitive" class="section">
+      <div class="content-container">
+        <h2>🏅 Dashboard Competitivo</h2>
+        <p>Progreso unificado de Arena, Liga y Consistencia para jugadores que buscan escalar de forma constante.</p>
+
+        <div class="competitive-top-grid">
+          <div class="competitive-status-card">
+            <h3>Arena y Liga</h3>
+            <div class="competitive-status-row"><span>Arena actual</span><strong id="competitiveArenaLabel">Bronce</strong></div>
+            <div class="competitive-status-row"><span>Trofeos</span><strong id="competitiveTrophiesLabel">0 / 500</strong></div>
+            <div class="competitive-status-row"><span>Liga semanal</span><strong id="competitiveLeagueLabel">Bronce I</strong></div>
+            <div class="competitive-status-row"><span>Puntos de liga</span><strong id="competitivePointsLabel">0 pts</strong></div>
+            <div class="versus-progress-track"><div class="versus-progress-fill" id="competitiveDivisionProgress"></div></div>
+            <p class="competitive-note">Victoria Versus: 3 pts, Empate: 1 pt, bonus por streak y duelo superior en WPM.</p>
+          </div>
+
+          <div class="competitive-streak-card">
+            <h3>Consistencia Diaria</h3>
+            <div class="streak-ring-wrap">
+              <canvas id="streakRingChart" width="180" height="180"></canvas>
+              <div class="streak-ring-center" id="streakRingCenter">Streak: 0d</div>
+            </div>
+            <p id="streakRewardLabel">Bono activo: +20% XP</p>
+          </div>
+        </div>
+
+        <div class="competitive-main-grid">
+          <div class="competitive-panel">
+            <h3>Leaderboard de Liga</h3>
+            <div class="competitive-mini-list" id="competitiveLeagueMini"></div>
+          </div>
+          <div class="competitive-panel">
+            <h3>Mi Progreso Semanal</h3>
+            <canvas id="competitiveWeeklyChart" width="520" height="240"></canvas>
+          </div>
+        </div>
+
+        <div class="league-grid">
+          <article class="league-card"><h4>Bronce</h4><p>Sin ventajas competitivas.</p><span>0 - 500 trofeos</span></article>
+          <article class="league-card"><h4>Plata</h4><p>+5% multiplicador XP diario.</p><span>501 - 1500 trofeos</span></article>
+          <article class="league-card"><h4>Oro</h4><p>Duelos premium + skin dorada.</p><span>1501 - 3000 trofeos</span></article>
+          <article class="league-card"><h4>Platino</h4><p>+10% XP + prioridad matchmaking.</p><span>3001 - 6000 trofeos</span></article>
+          <article class="league-card"><h4>Diamante</h4><p>Skins exclusivas + límite superior de liga.</p><span>6001 - 12000 trofeos</span></article>
+          <article class="league-card"><h4>Maestro</h4><p>Sala Maestro + ventajas máximas.</p><span>12001+ trofeos</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Leaderboard -->
+    <section id="leaderboard" class="section">
+      <div class="content-container">
+        <h2>🏆 Clasificación Global</h2>
+        <div class="leaderboard-header-row">
+          <p>Ranking global por mejor WPM (n8n + PostgreSQL)</p>
+          <div class="leaderboard-actions">
+            <button class="btn btn-secondary" id="reloadLeaderboardBtn">Recargar ranking</button>
+            <span id="reloadLeaderboardStatus" class="reload-leaderboard-status" aria-live="polite"></span>
+          </div>
+        </div>
+        <span id="leaderboardSyncMeta" class="leaderboard-sync-meta" aria-live="polite"></span>
+        <pre id="leaderboardSyncDebug" class="leaderboard-sync-debug" aria-live="polite"></pre>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Usuario</th>
+              <th>Mejor WPM</th>
+              <th>WPM Medio</th>
+              <th>XP Total</th>
+              <th>Arena</th>
+              <th>Liga</th>
+              <th>Racha</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardTableBody">
+            <tr>
+              <td colspan="8" style="text-align:center;color:var(--text-sub);padding:1.5rem;">Pulsa "Recargar" para cargar datos remotos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sección: About -->
+    <section id="about" class="section">
+      <div class="content-container">
+        <h2>ℹ️ Sobre TypeHub</h2>
+        <p>TypeHub es una plataforma minimalista para medir y mejorar tu velocidad de mecanografía. Realiza tests justos, compite con otros usuarios y mejora tus habilidades.</p>
+        
+        <h3>¿Cómo funciona?</h3>
+        <ul>
+          <li>🎯 Selecciona el modo (tiempo, palabras, citas, etc.)</li>
+          <li>⌨️ Escribe el texto que aparece en pantalla</li>
+          <li>📊 Recibe métricas precisas (WPM, precisión, errores)</li>
+          <li>🏆 Compite en la clasificación global</li>
+        </ul>
+
+        <h3>Características</h3>
+        <ul>
+          <li>Varios modos de test</li>
+          <li>Múltiples idiomas soportados</li>
+          <li>Temas personalizables</li>
+          <li>Estadísticas detalladas</li>
+          <li>Leaderboards globales</li>
+        </ul>
+
+        <p style="margin-top: 2rem; color: var(--text-light);">
+          Versión 1.0.0 — Made with ❤️ para mecanógrafos como tú.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección: Settings -->
+    <section id="settings" class="section">
+      <div class="content-container">
+        <h2>⚙️ Ajustes</h2>
+        
+        <div class="settings-group">
+          <h3>Tema</h3>
+          <div class="theme-selector">
+            <button class="theme-btn active" data-theme="serika">Serika Dark</button>
+            <button class="theme-btn" data-theme="nord">Nord</button>
+            <button class="theme-btn" data-theme="dracula">Dracula</button>
+            <button class="theme-btn" data-theme="monokai">Monokai</button>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3>Sonidos</h3>
+          <label class="checkbox">
+            <input type="checkbox" id="soundToggle" checked />
+            Habilitar sonidos
+          </label>
+        </div>
+
+        <div class="settings-group">
+          <h3>Privacidad</h3>
+          <label class="checkbox">
+            <input type="checkbox" id="privateToggle" />
+            Perfil privado
+          </label>
+        </div>
+
+        <div class="settings-group">
+          <h3>Datos</h3>
+          <button class="btn btn-secondary" id="clearDataBtn">Limpiar datos locales</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Login / Perfil -->
+    <section id="login" class="section">
+      <!-- Panel de Registro -->
+      <div class="auth-container" id="registerPanel">
+        <h2>Crear Cuenta</h2>
+        <form class="auth-form" id="registerForm">
+          <input type="text" id="regUsername" placeholder="Nombre de usuario" required autocomplete="username" />
+          <input type="email" id="regEmail" placeholder="Email" required autocomplete="email" />
+          <input type="password" id="regPassword" placeholder="Contraseña (mín. 6 caracteres)" required autocomplete="new-password" />
+          <input type="password" id="regPasswordConfirm" placeholder="Confirmar contraseña" required autocomplete="new-password" />
+          <button type="submit" class="btn btn-primary">Crear cuenta</button>
+        </form>
+        <p class="auth-link">¿Ya tienes cuenta? <a href="#" id="toLoginLink">Inicia sesión</a></p>
+      </div>
+
+      <!-- Panel de Login -->
+      <div class="auth-container" id="loginPanel" style="display: none;">
+        <h2>Iniciar Sesión</h2>
+        <form class="auth-form" id="loginForm">
+          <input type="email" id="loginEmail" placeholder="Email" required autocomplete="email" />
+          <input type="password" id="loginPassword" placeholder="Contraseña" required autocomplete="current-password" />
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <p class="auth-link">¿No tienes cuenta? <a href="#" id="toRegisterLink">Regístrate gratis</a></p>
+      </div>
+
+      <!-- Panel de Perfil (cuando está logueado) -->
+      <div class="profile-container" id="profilePanel" style="display: none;">
+        <button class="btn btn-secondary" id="logoutBtn">Cerrar Sesión</button>
+
+        <div class="profile-header-card">
+          <div>
+            <h2 class="profile-username" id="profileUsername">-</h2>
+            <div class="profile-meta-row">
+              <span id="profileDate">Joined -</span>
+              <span id="profileDaysAgo">0 days ago</span>
+            </div>
+            <div class="profile-email" id="profileEmail">-</div>
+          </div>
+          <div class="xp-panel">
+            <div class="xp-level" id="profileLevel">1</div>
+            <div class="xp-total" id="profileTotalXp">0 total xp</div>
+            <div class="xp-progress" id="profileNextPct">0.00%</div>
+            <div class="xp-until" id="profileXpUntil">1 / 1000 xp until next level</div>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <h3>Resumen global de uso</h3>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span>tests started</span>
+              <strong id="statTestsStarted">0</strong>
+            </div>
+            <div class="summary-item">
+              <span>tests completed</span>
+              <strong id="statTestsCompleted">0 (0%)</strong>
+              <small id="statRestarts">0 restarts per completed test</small>
+            </div>
+            <div class="summary-item">
+              <span>time typing</span>
+              <strong id="statTotalTime">00:00:00</strong>
+            </div>
+            <div class="summary-item">
+              <span>duelos versus</span>
+              <strong id="versusDuelsPlayed">0</strong>
+              <small>total (online + bot)</small>
+            </div>
+            <div class="summary-item">
+              <span>victorias versus</span>
+              <strong id="versusWinRate">0%</strong>
+              <small>porcentaje de victorias</small>
+            </div>
+            <div class="summary-item">
+              <span>mejor wpm versus</span>
+              <strong id="versusBestWpm">0</strong>
+              <small>récord personal en duelos</small>
+            </div>
+            <div class="summary-item">
+              <span>duelos vs bot</span>
+              <strong id="versusBotPlayed">0</strong>
+              <small>partidas simuladas</small>
+            </div>
+            <div class="summary-item">
+              <span>duelos online</span>
+              <strong id="versusOnlinePlayed">0</strong>
+              <small>partidas de red</small>
+            </div>
+            <div class="summary-item">
+              <span>winrate online</span>
+              <strong id="versusOnlineWinRate">0%</strong>
+              <small>solo enfrentamientos reales</small>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <button class="btn btn-secondary" id="editProfileBtn">Edit profile</button>
+            <button class="btn btn-primary" id="copyPublicLinkBtn">Copy public link</button>
+            <button class="btn btn-secondary" id="reloadProfileBtn">Recargar datos</button>
+            <span id="reloadProfileStatus" class="reload-profile-status" aria-live="polite"></span>
+            <span id="profileSyncMeta" class="profile-sync-meta" aria-live="polite"></span>
+          </div>
+          <pre id="profileSyncDebug" class="profile-sync-debug" aria-live="polite"></pre>
+        </div>
+
+        <div class="profile-block">
+          <h3>Progreso Competitivo</h3>
+          <div class="profile-competitive-grid">
+            <div class="profile-competitive-card">
+              <span>Liga actual</span>
+              <strong id="profileLeagueBadge">Bronce I</strong>
+              <small id="profileLeaguePoints">0 pts</small>
+              <div class="versus-progress-track"><div class="versus-progress-fill" id="profileLeagueProgress"></div></div>
+            </div>
+            <div class="profile-competitive-card">
+              <span>Arena</span>
+              <strong id="profileArenaBadge">Bronce</strong>
+              <small id="profileArenaTrophies">0 / 500</small>
+              <canvas id="profileArenaChart" width="180" height="180"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <h3>Aprender Idiomas (beta)</h3>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span>xp idiomas total</span>
+              <strong id="langTotalXpProfile">0 XP</strong>
+            </div>
+            <div class="summary-item">
+              <span>lecciones completadas</span>
+              <strong id="langLessonsDoneProfile">0</strong>
+            </div>
+            <div class="summary-item">
+              <span>gemas idiomas</span>
+              <strong id="langGemsProfile">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <h3>All-Time English Leaderboards</h3>
+          <div class="pb-grid" id="personalBestsGrid">
+            <div class="pb-card"><div>15 seconds</div><strong id="pb15">- -</strong><small id="pb15Date">-</small></div>
+            <div class="pb-card"><div>30 seconds</div><strong id="pb30">- -</strong><small id="pb30Date">-</small></div>
+            <div class="pb-card"><div>50 words</div><strong id="pb50w">- -</strong><small id="pb50wDate">-</small></div>
+            <div class="pb-card"><div>100 words</div><strong id="pb100w">- -</strong><small id="pb100wDate">-</small></div>
+          </div>
+          <button class="btn btn-secondary" id="showAllPbsBtn">Show all personal bests</button>
+        </div>
+
+        
+
+        <div class="profile-block">
+          <h3>filters</h3>
+          <div class="filter-presets">
+            <button class="filter-chip active">all</button>
+            <button class="filter-chip">current settings</button>
+            <button class="filter-chip">advanced</button>
+            <button class="filter-chip">save as preset</button>
+            <button class="filter-chip">last day</button>
+            <button class="filter-chip">last week</button>
+            <button class="filter-chip">last month</button>
+            <button class="filter-chip">last 3 months</button>
+            <button class="filter-chip">all time</button>
+          </div>
+          <div class="filters-grid">
+            <div class="filter-box" data-filter="date">
+              <span class="filter-box-title">Date</span>
+              <select id="filterDate"><option value="all">all</option></select>
+            </div>
+            <div class="filter-box" data-filter="mode">
+              <span class="filter-box-title">Mode</span>
+              <select id="filterMode"><option value="all">all</option><option value="time">time</option><option value="words">words</option><option value="texts">texts</option></select>
+            </div>
+            <div class="filter-box" data-filter="time">
+              <span class="filter-box-title">Time</span>
+              <select id="filterTime"><option value="all">all</option><option value="15">15s</option><option value="30">30s</option><option value="60">60s</option><option value="120">120s</option></select>
+            </div>
+            <div class="filter-box" data-filter="words">
+              <span class="filter-box-title">Words</span>
+              <select id="filterWords"><option value="all">all</option><option value="50">50</option><option value="100">100</option></select>
+            </div>
+            <div class="filter-box" data-filter="difficulty">
+              <span class="filter-box-title">Difficulty</span>
+              <select id="filterDifficulty"><option value="all">all</option><option value="1k">1k</option><option value="5k">5k</option><option value="20k">20k</option></select>
+            </div>
+            <div class="filter-box" data-filter="punctuation">
+              <span class="filter-box-title">Punctuation</span>
+              <select id="filterPunctuation"><option value="all">all</option><option value="on">on</option><option value="off">off</option></select>
+            </div>
+            <div class="filter-box" data-filter="numbers">
+              <span class="filter-box-title">Numbers</span>
+              <select id="filterNumbers"><option value="all">all</option><option value="on">on</option><option value="off">off</option></select>
+            </div>
+            <div class="filter-box" data-filter="language">
+              <span class="filter-box-title">Language</span>
+              <select id="filterLanguage"><option value="all">all</option><option value="es">spanish</option><option value="en">english</option><option value="fr">french</option><option value="de">german</option><option value="pt">portuguese</option></select>
+            </div>
+            <div class="filter-box" data-filter="funbox">
+              <span class="filter-box-title">Funbox</span>
+              <select id="filterFunbox"><option value="all">all</option></select>
+            </div>
+            <div class="filter-box" data-filter="tags">
+              <span class="filter-box-title">Tags</span>
+              <select id="filterTags"><option value="all">all</option></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <p class="speed-trend" id="speedTrend">Speed change per hour spent typing: 0.00 wpm</p>
+          <div class="metric-tabs">
+            <button class="metric-tab active" data-metric="speed">Speed</button>
+            <button class="metric-tab" data-metric="accuracy">Accuracy</button>
+            <button class="metric-tab" data-metric="avg10">Avg of 10</button>
+            <button class="metric-tab" data-metric="avg100">Avg of 100</button>
+          </div>
+          <canvas id="profileTrendChart" width="900" height="220"></canvas>
+          <div class="range-summary-grid">
+            <div><span>estimated words typed</span><strong id="rangeWords">0</strong></div>
+            <div><span>tests started</span><strong id="rangeStarted">0</strong></div>
+            <div><span>tests completed</span><strong id="rangeCompleted">0 (0%)</strong><small id="rangeRestarts">0 restarts per completed test</small></div>
+            <div><span>time typing</span><strong id="rangeTime">00:00:00</strong></div>
+            <div><span>highest wpm</span><strong id="rangeBestWpm">0 time -</strong></div>
+            <div><span>average wpm</span><strong id="rangeAvgWpm">0</strong><small id="rangeAvgWpm10">last 10: 0</small></div>
+            <div><span>highest raw wpm</span><strong id="rangeBestRaw">0</strong></div>
+            <div><span>average raw wpm</span><strong id="rangeAvgRaw">0</strong><small id="rangeAvgRaw10">last 10: 0</small></div>
+            <div><span>highest accuracy</span><strong id="rangeBestAcc">0%</strong></div>
+            <div><span>avg accuracy</span><strong id="rangeAvgAcc">0%</strong><small id="rangeAvgAcc10">last 10: 0%</small></div>
+            <div><span>highest consistency</span><strong id="rangeBestCon">0%</strong></div>
+            <div><span>avg consistency</span><strong id="rangeAvgCon">0%</strong><small id="rangeAvgCon10">last 10: 0%</small></div>
+          </div>
+          <button class="btn btn-secondary" id="exportCsvBtn">Export CSV</button>
+        </div>
+
+        <div class="profile-block">
+          <h3>Resultados individuales</h3>
+          <div class="tests-history" id="testsHistory">
+            <p style="color: var(--text-light); text-align: center;">Sin tests registrados aún.</p>
+          </div>
+          <button class="btn btn-secondary" id="loadMoreTestsBtn">load more</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="mainFooter">
+    <div class="footer-inner">
+      <!-- Keyboard shortcuts -->
+      <div class="footer-keys" aria-label="Atajos de teclado">
+        <span class="footer-key"><kbd>Tab</kbd><span class="footer-key-sep">+</span><kbd>Enter</kbd> <span>reiniciar</span></span>
+        <span class="footer-key"><kbd>Esc</kbd> <span>parar</span></span>
+        <span class="footer-key"><kbd>Ctrl</kbd><span class="footer-key-sep">+</span><kbd>Shift</kbd><span class="footer-key-sep">+</span><kbd>P</kbd> <span>comando</span></span>
+      </div>
+      <!-- Links -->
+      <nav class="footer-links" aria-label="Links de pie de página">
+        <a href="#" id="termsLink">términos</a>
+        <a href="#">privacidad</a>
+        <a href="#">seguridad</a>
+        <a href="#" target="_blank" rel="noopener">github</a>
+        <a href="#" target="_blank" rel="noopener">discord</a>
+        <a href="#" target="_blank" rel="noopener">twitter</a>
+        <a href="#">contacto</a>
+        <span style="font-size:0.7rem;color:var(--text-sub);">v1.0.0</span>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Config-panel chip sync — no modifica script.js -->
+  <script>
+    (function () {      /* ---- CHIPS → SELECT SYNC ---- */
+      function syncChips(ctrl, val) {
+        document.querySelectorAll('.config-chip[data-ctrl="' + ctrl + '"]').forEach(function (btn) {
+          btn.classList.toggle('config-chip--active', btn.dataset.val === val);
+        });
+        updateSummary();
+      }
+
+      document.querySelectorAll('.config-chip[data-ctrl]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var selId = this.dataset.ctrl;
+          var selEl = document.getElementById(selId);
+          if (!selEl) return;
+          selEl.value = this.dataset.val;
+          selEl.dispatchEvent(new Event('change', { bubbles: true }));
+          syncChips(selId, this.dataset.val);
+        });
+      });
+
+      /* ---- CUSTOM TIME INPUT ---- */
+      var timeCustom = document.getElementById('timeCustomInput');
+      if (timeCustom) {
+        timeCustom.addEventListener('change', function () {
+          var v = parseInt(this.value, 10);
+          if (!v || v < 5) return;
+          var sel = document.getElementById('timeSelect');
+          if (!sel) return;
+          // Añade opción temporal si no existe
+          var exists = Array.from(sel.options).some(function (o) { return o.value === String(v); });
+          if (!exists) {
+            var opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v + 's';
+            sel.appendChild(opt);
+          }
+          sel.value = v;
+          sel.dispatchEvent(new Event('change', { bubbles: true }));
+          // Deselecciona chips fijos
+          document.querySelectorAll('.config-chip[data-ctrl="timeSelect"]').forEach(function (b) {
+            b.classList.remove('config-chip--active');
+          });
+          updateSummary();
+        });
+      }
+
+      /* ---- ACCORDION ---- */
+      var accBtn = document.querySelector('.config-accordion-btn');
+      var accBody = document.getElementById('advancedBody');
+      if (accBtn && accBody) {
+        accBtn.addEventListener('click', function () {
+          var open = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !open);
+          accBody.hidden = open;
+          var arrow = this.querySelector('.config-accordion-arrow');
+          if (arrow) arrow.style.transform = open ? '' : 'rotate(90deg)';
+        });
+      }
+
+      /* ---- SUMMARY TEXT ---- */
+      function updateSummary() {
+        var summaryEl = document.getElementById('configSummaryText');
+        if (!summaryEl) return;
+        var modeWords = document.getElementById('typeWords');
+        var mode = (modeWords && modeWords.classList.contains('active')) ? 'Palabras' : 'Textos';
+        var timeSel = document.getElementById('timeSelect');
+        var timeVal = timeSel ? timeSel.value + ' s' : '—';
+        var diffSel = document.getElementById('difficultySelect');
+        var diffVal = diffSel ? diffSel.value : '—';
+        var lang = document.getElementById('testLanguage');
+        var langVal = lang ? lang.options[lang.selectedIndex].text.replace(/^.{1,4}\s/, '') : '—';
+        summaryEl.textContent = mode + ' · ' + timeVal + ' · Banco ' + diffVal + ' · ' + langVal;
+      }
+
+      // Actualizar summary cuando cambien los selects nativos
+      ['timeSelect', 'difficultySelect', 'testLanguage'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('change', updateSummary);
+      });
+      // Actualizar cuando JS cambia modo palabras/textos
+      ['typeWords', 'typeTexts'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('click', updateSummary);
+      });
+      updateSummary();
+
+      /* ---- RESET ---- */
+      var resetBtn = document.getElementById('configResetBtn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          // Tiempo → 60
+          var timeSel = document.getElementById('timeSelect');
+          if (timeSel) { timeSel.value = '60'; timeSel.dispatchEvent(new Event('change', { bubbles: true })); }
+          syncChips('timeSelect', '60');
+          // Banco → 1k
+          var diffSel = document.getElementById('difficultySelect');
+          if (diffSel) { diffSel.value = '1k'; diffSel.dispatchEvent(new Event('change', { bubbles: true })); }
+          syncChips('difficultySelect', '1k');
+          // Checkboxes
+          ['optUppercase', 'optPunctuation', 'optNumbers'].forEach(function (id) {
+            var cb = document.getElementById(id);
+            if (cb && cb.checked) { cb.checked = false; cb.dispatchEvent(new Event('change', { bubbles: true })); }
+          });
+          // Limpiar input custom
+          if (timeCustom) timeCustom.value = '';
+          updateSummary();
+        });
+      }
+
+      /* ---- CTA EMPEZAR ---- */
+      var startBtn = document.getElementById('configStartBtn');
+      if (startBtn) {
+        startBtn.addEventListener('click', function () {
+          var restartBtn = document.getElementById('restartBtn');
+          if (restartBtn) restartBtn.click();
+          var input = document.getElementById('testInput');
+          if (input) input.focus();
+        });
+      }
+    })();
+  </script>
+
+  <!-- Touch support para teclado virtual en móvil -->
+  <script>
+    (function () {
+      /* Asegura que el teclado virtual aparezca al tocar el área de test.
+         El JS de script.js ya maneja el click; esto añade touchstart. */
+      var testArea = document.querySelector('.test-area');
+      var testInput = document.getElementById('testInput');
+      if (testArea && testInput) {
+        testArea.addEventListener('touchstart', function (e) {
+          /* No prevenimos default para no bloquear el scroll */
+          testInput.focus();
+        }, { passive: true });
+      }
+
+      /* Igual para el área de texto del versus */
+      var versusArea = document.getElementById('versusUserText');
+      var versusInput = document.getElementById('versusInput');
+      if (versusArea && versusInput) {
+        versusArea.addEventListener('touchstart', function () {
+          versusInput.focus();
+        }, { passive: true });
+      }
+    })();
+  </script>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+
+  <!-- GDPR Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner" style="display:none;" role="region" aria-label="Aviso de cookies">
+    <div class="cookie-banner-content">
+      <p>Usamos cookies esenciales para el funcionamiento del sitio y guardamos tus preferencias localmente. No compartimos datos con terceros.</p>
+      <div class="cookie-banner-actions">
+        <button id="cookieAccept" class="btn-primary cookie-btn">Aceptar</button>
+        <button id="cookieDecline" class="btn-ghost cookie-btn">Solo esenciales</button>
+        <a href="#" id="cookiePolicyLink" class="cookie-policy-link">Política de cookies</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onboarding Modal -->
+  <div class="onboarding-overlay" id="onboardingOverlay" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="onboardingTitle"></div>
+  <div class="onboarding-modal" id="onboardingModal" style="display:none;">
+    <div class="onboarding-steps">
+      <!-- Step 1 -->
+      <div class="onboarding-step active" id="onboardingStep1">
+        <div class="onboarding-icon">⌨</div>
+        <h2 id="onboardingTitle">Bienvenido a TypeHub</h2>
+        <p>El lugar donde mejoras tu velocidad de escritura. Compite, practica y sube en el ranking global.</p>
+        <div class="onboarding-dots">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <button class="btn-primary onboarding-next" data-step="1">Siguiente</button>
+      </div>
+      <!-- Step 2 -->
+      <div class="onboarding-step" id="onboardingStep2">
+        <div class="onboarding-icon">⚙</div>
+        <h2>Personaliza tu test</h2>
+        <p>Elige idioma, dificultad, duración y activa mayúsculas, puntuación o números. Cada combinación cuenta para tus récords personales.</p>
+        <div class="onboarding-dots">
+          <span class="dot"></span><span class="dot active"></span><span class="dot"></span>
+        </div>
+        <div class="onboarding-nav">
+          <button class="btn-ghost onboarding-prev" data-step="2">Atrás</button>
+          <button class="btn-primary onboarding-next" data-step="2">Siguiente</button>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="onboarding-step" id="onboardingStep3">
+        <div class="onboarding-icon">🏆</div>
+        <h2>Crea tu cuenta</h2>
+        <p>Guarda tus tests, sube al leaderboard global y desbloquea la arena competitiva. Es gratis.</p>
+        <div class="onboarding-dots">
+          <span class="dot"></span><span class="dot"></span><span class="dot active"></span>
+        </div>
+        <div class="onboarding-nav">
+          <button class="btn-ghost onboarding-prev" data-step="3">Atrás</button>
+          <button class="btn-primary" id="onboardingFinish">Empezar</button>
+        </div>
+      </div>
+    </div>
+    <button class="onboarding-skip" id="onboardingSkip">Saltar</button>
+  </div>
 </body>
 </html>
